@@ -1,0 +1,38 @@
+<!--
+*****************Visual Library - Wiki-Editor **************************
+Author: Christian Erlinger UB TU Wien
+Email: erl@ub.tuwien.ac.at
+------------------------------------------------------------------------
+
+Dieses File stellt den Wiki-Code für das Visual Library Frontend dar.
+
+1. Konfiguriere den Paramter URL zum Fremdserver auf dem das ajax_wiki.php file liegt; sowie die Paraemter vl_wiki (i.e. Name der Wiki-Seite), und vl_wiki_journal wie in der Datenbank gespeichert.
+
+2. Für die Installation der Datenbank und der Verwaltung des Backends benutze das Paket vl_notification (https://github.com/tuwerl/vl_notification)
+
+************************************************************************
+-->
+
+~all~
+<script>
+function jsonp_callback(text){
+	res = $.parseJSON(text);
+	$('#contentDE').html(res.vl_wiki_html);
+}
+$(document).ready(function(){
+                $.ajax({
+                    url: 'http://domain/ajax_wiki.php',
+                    dataType: 'jsonp',
+                    data: { vl_wiki: 'imprint', 
+							vl_wiki_journal: 'oes', 
+~de~
+							vl_wiki_lang: 'de',
+~en~
+							vl_wiki_lang: 'en',
+~all~
+							callback: 'jsonp_callback' },
+                });
+            })
+
+</script>
+<div id='contentDE'></div>
