@@ -1,5 +1,5 @@
 # vl_wikieditor
-**Simple WYIWYG-Editor for Visual Library Wiki-Pages**
+**Simple WYSIWYG-Editor for Visual Library Wiki-Pages**
 
 Further information for the installation are written in [vl_wiki_include.html](https://github.com/tuwerl/vl_wikieditor/blob/master/vl_wiki_include.html)
 
